@@ -15,11 +15,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js" integrity="sha512-MQkEjxbZvzs4TX8ES4/tTIyaYdtDlJzVocnPo0GoysTR0jCmNg0P2is7uqpCoWxmoS9X84CDVzuWgZD/R/Q2oQ==" crossorigin="anonymous"></script>
     <!-- vueCDN -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- axios CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
     <title>Dischi | Vue</title>
   </head>
   <body>
 
     <div id="root">
+
+      <div class="container" v-for="disc in discs">
+
+        <div class="img_disc">
+          <img :src="disc.poster" alt="Poster_disc">
+        </div>
+
+        <div class="info_disc">
+          <h2 class="title">{{disc.title}}</h2>
+          <strong class="author">{{disc.author}} - </strong>
+          <span class="year">({{disc.year}})</span>
+        </div>
+
+      </div>
+
 
     </div>
 
