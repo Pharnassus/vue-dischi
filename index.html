@@ -23,16 +23,31 @@
 
     <div id="root">
 
-      <div class="container" v-for="disc in discs">
+      <header  class="select_genre">
 
-        <div class="img_disc">
-          <img :src="disc.poster" alt="Poster_disc">
-        </div>
+        <label>Scegli il tuo genere musicale</label>
+        <select class="genre" v-model="selectedValue">
+          <option value="">Generi</option>
+          <option  v-for="genre in genres" :value="genre">{{genre}}</option>
+        </select>
 
-        <div class="info_disc">
-          <h2 class="title">{{disc.title}}</h2>
-          <strong class="author">{{disc.author}} - </strong>
-          <span class="year">({{disc.year}})</span>
+      </header>
+
+
+      <div class="container_discs">
+
+        <div class="container" v-for="disc in discs" v-if="disc.genre == selectedValue || selectedValue == ''">
+
+          <div class="img_disc">
+            <img :src="disc.poster" alt="Poster_disc">
+          </div>
+
+          <div class="info_disc">
+            <h2 class="title">{{disc.title}}</h2>
+            <strong class="author">{{disc.author}} - </strong>
+            <span class="year">({{disc.year}})</span>
+          </div>
+
         </div>
 
       </div>

@@ -5,8 +5,8 @@ avremo a disposizione una decina di dischi musicali.
 Utilizzando vue, stampiamo a schermo una card per ogni album.
 */
 
-/*BONUS: Creare una select con tutti i generi dei dischi. In base a
-cosa scegliamo nella select, vedremo i corrispondenti cd.*/
+/*BONUS: Creare una select con tutti i generi dei dischi.
+In base a cosa scegliamo nella select, vedremo i corrispondenti cd.*/
 /*BONUS 2: Ordinare i dischi per anno di uscita.*/
 
 /* CHIAVI
@@ -16,11 +16,15 @@ cosa scegliamo nella select, vedremo i corrispondenti cd.*/
 // "genre": "Rock",
 // "year": "1988"
 */
+
+//______________________________________________________________________________________________________________
 var app = new Vue(
   {
     el: '#root',
     data: {
       discs: [],
+      selectedValue: '',
+      genres: [],
     },
     methods: {
 
@@ -33,9 +37,18 @@ var app = new Vue(
         .get('https://flynn.boolean.careers/exercises/api/array/music')
         .then( function(keiByGet) {
           self.discs = keiByGet.data.response;
-          console.log(self.discs);
-        });
+          // console.log(self.discs);
 
+          self.discs.forEach(
+            (element) => {
+
+              if (self.genres.includes(element.genre) == false) {
+                self.genres.push(element.genre);
+              }
+
+          });
+          console.log(self.genres);
+      });
     },
   },
 );

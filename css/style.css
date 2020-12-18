@@ -21,8 +21,24 @@ span{
   display: inline-block;
 }
 
-#root{
-  /* background: white; */
+.select_genre{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+}
+.select_genre label{
+  align-self: center;
+  margin-right: 15px;
+}
+select,
+option{
+  align-self: center;
+  color: black;
+}
+
+
+.container_discs{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
