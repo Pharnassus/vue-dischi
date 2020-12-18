@@ -39,6 +39,12 @@ var app = new Vue(
           self.discs = keiByGet.data.response;
           // console.log(self.discs);
 
+          self.discs.sort(function(disc1, disc2) {
+            return (disc1.year) - (disc2.year);//ordine crescente
+            // return (disc2.year) - (disc1.year);//ordine decrescente
+
+          });
+
           self.discs.forEach(
             (element) => {
 
