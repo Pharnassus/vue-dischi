@@ -9,6 +9,7 @@ Utilizzando vue, stampiamo a schermo una card per ogni album.
 In base a cosa scegliamo nella select, vedremo i corrispondenti cd.*/
 /*BONUS 2: Ordinare i dischi per anno di uscita.*/
 
+//data: response
 /* CHIAVI
 // "poster": "https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg",
 // "title": "New Jersey",
